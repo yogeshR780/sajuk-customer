@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>साजूक स्वाद by Pragati — घरगुती महाराष्ट्रीयन खाद्यपदार्थ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Noto+Serif+Devanagari:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF2E3;
+    --cream-deep:#F3E6CE;
+    --paper:#FFFCF6;
+    --maroon:#7A1F3D;
+    --maroon-deep:#5C1730;
+    --gold:#C88A2C;
+    --gold-light:#E3B665;
+    --green:#3F6B3F;
+    --brown:#8B5A2B;
+    --ink:#3A2418;
+    --ink-soft:#6b5544;
+    --line: rgba(122,31,61,0.25);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Poppins', 'Noto Sans Devanagari', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mr{font-family:'Noto Serif Devanagari','Noto Sans Devanagari',serif;}
+  .display{font-family:'Yatra One', 'Noto Serif Devanagari', cursive;}
+  .en-script{font-family:'Cormorant Garamond', serif; font-style:italic;}
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  /* ---------- decorative texture ---------- */
+  .grain-bg{
+    background-image:
+      radial-gradient(circle at 10% 15%, rgba(200,138,44,0.08), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(122,31,61,0.06), transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(63,107,63,0.05), transparent 40%);
+  }
+
+  /* ---------- header / hero ---------- */
+  header.hero{
+    position:relative;
+    padding:26px 16px 34px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+  }
+  .hero-frame{
+    position:relative;
+    max-width:400px;
+    margin:0 auto;
+    padding:12px;
+    border:1.5px solid var(--gold);
+    border-radius:6px;
+    background:var(--cream);
+  }
+  .hero-frame::before, .hero-frame::after{
+    content:"";
+    position:absolute;
+    width:22px; height:22px;
+    border:1.5px solid var(--gold);
+    pointer-events:none;
+  }
+  .hero-frame::before{ top:-1.5px; left:-1.5px; border-right:none; border-bottom:none; }
+  .hero-frame::after{ bottom:-1.5px; right:-1.5px; border-left:none; border-top:none; }
+  .hero-banner{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:3px;
+  }
+  .ribbon{
+    display:inline-block;
+    margin-top:22px;
+    padding:8px 22px;
+    background:var(--maroon);
+    color:var(--cream);
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    border-radius:2px;
+  }
+
+  /* ---------- section titles ---------- */
+  .section{ max-width:1080px; margin:0 auto; padding:56px 20px; }
+  .section-title{
+    text-align:center;
+    margin-bottom:36px;
+  }
+  .section-title .tag{
+    display:inline-block;
+    background:var(--maroon);
+    color:var(--cream);
+    padding:7px 20px;
+    border-radius:2px;
+    font-size:14px;
+    letter-spacing:0.04em;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:14px;
+    margin-top:10px;
+  }
+
+  /* ---------- product cards ---------- */
+  .products-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+  }
+  @media (max-width:820px){ .products-grid{ grid-template-columns:1fr; } }
+
+  .pcard{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .pcard:hover, .pcard:focus-visible{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(90,30,30,0.14);
+    outline:none;
+  }
+  .pcard-img{
+    height:190px;
+    position:relative;
+    overflow:hidden;
+    background-color:var(--cream-deep);
+  }
+  .pcard-img img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .4s ease;
+  }
+  .pcard:hover .pcard-img img{ transform:scale(1.06); }
+  .pcard-tap{
+    position:absolute; top:10px; right:10px;
+    background:rgba(255,252,246,0.92);
+    color:var(--maroon);
+    font-size:10.5px;
+    padding:5px 10px;
+    border-radius:20px;
+    letter-spacing:.03em;
+    font-weight:600;
+  }
+  .pcard-body{ padding:18px 20px 20px; }
+  .pcard-name-mr{ font-size:23px; margin:0 0 2px; }
+  .pcard-name-en{ font-size:14px; margin:0 0 10px; opacity:.75; }
+  .pcard-desc{ font-size:12.5px; color:var(--ink-soft); line-height:1.55; margin-bottom:14px; min-height:52px; }
+  .pcard-price-hint{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px;
+    border-top:1px dashed var(--line);
+    padding-top:12px;
+  }
+  .pcard-from{ color:var(--ink-soft); }
+  .pcard-from b{ color:var(--maroon); font-size:15px; }
+  .pcard-view{ color:var(--brown); font-weight:600; }
+
+  .pcard-img{ background-color:var(--cream-deep); }
+
+  /* ---------- modal / purity card ---------- */
+  .overlay{
+    position:fixed; inset:0;
+    background:rgba(58,36,24,0.55);
+    display:none;
+    align-items:flex-start;
+    justify-content:center;
+    padding:40px 16px;
+    overflow-y:auto;
+    z-index:100;
+  }
+  .overlay.open{ display:flex; }
+  .modal{
+    background:var(--paper);
+    max-width:640px;
+    width:100%;
+    border-radius:8px;
+    border:1px solid var(--line);
+    position:relative;
+    animation:pop .25s ease;
+  }
+  @keyframes pop{ from{ transform:translateY(14px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+  .modal-close{
+    position:absolute; top:14px; right:16px;
+    background:none; border:none;
+    font-size:22px; color:var(--maroon);
+    cursor:pointer; line-height:1;
+  }
+  .modal-img{ height:200px; border-radius:8px 8px 0 0; overflow:hidden; background:var(--cream-deep); }
+  .modal-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .modal-body{ padding:26px 28px 30px; }
+  .modal-head-mr{ font-size:30px; margin:0 0 2px; color:var(--maroon); }
+  .modal-head-en{ font-size:15px; opacity:.7; margin-bottom:16px; }
+
+  .purity-strip{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .purity-pill{
+    font-size:11.5px;
+    padding:6px 12px;
+    border-radius:20px;
+    background:var(--cream-deep);
+    border:1px solid var(--gold-light);
+    color:var(--brown);
+    font-weight:500;
+  }
+
+  .modal-label{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--brown);
+    margin:20px 0 8px;
+    font-weight:600;
+  }
+  .ingredient-list{
+    list-style:none; margin:0; padding:0;
+    display:grid; grid-template-columns:1fr 1fr; gap:8px 16px;
+  }
+  .ingredient-list li{
+    font-size:13.5px;
+    padding-left:16px;
+    position:relative;
+    color:var(--ink);
+  }
+  .ingredient-list li::before{
+    content:"❀"; position:absolute; left:0; top:0;
+    color:var(--gold); font-size:11px;
+  }
+  .safety-note{
+    font-size:13px; color:var(--ink-soft); line-height:1.7;
+    background:var(--cream);
+    border-left:3px solid var(--green);
+    padding:12px 14px;
+    border-radius:0 4px 4px 0;
+  }
+
+  .price-table{ width:100%; border-collapse:collapse; margin-top:6px; }
+  .price-table td{
+    font-size:14px;
+    padding:9px 4px;
+    border-bottom:1px dashed var(--line);
+  }
+  .price-table td:last-child{ text-align:right; font-weight:600; color:var(--maroon); }
+
+  .modal-actions{
+    margin-top:24px;
+    display:flex; gap:12px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 20px;
+    border-radius:5px;
+    font-size:13.5px;
+    font-weight:600;
+    text-decoration:none;
+    cursor:pointer;
+    border:none;
+  }
+  .btn-whatsapp{ background:#3F6B3F; color:#fff; }
+  .btn-whatsapp:hover{ background:#345a34; }
+  .btn-outline{ background:none; border:1px solid var(--line); color:var(--ink); }
+
+  /* ---------- offers ---------- */
+  .offers{ background:var(--cream-deep); }
+  .offers-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+    margin-top:10px;
+  }
+  @media (max-width:820px){ .offers-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .offers-grid{ grid-template-columns:1fr; } }
+  .offer-item{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 16px;
+    text-align:center;
+  }
+  .offer-icon{ font-size:26px; margin-bottom:10px; }
+  .offer-item p{ font-size:12.5px; color:var(--ink-soft); margin:0; line-height:1.5; }
+  .offer-item .big{ font-size:16px; color:var(--maroon); font-weight:600; margin-bottom:4px;}
+
+  /* ---------- locations ---------- */
+  .loc-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:20px;
+  }
+  @media (max-width:600px){ .loc-grid{ grid-template-columns:1fr; } }
+  .loc-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+  .loc-card .name{ color:var(--maroon); font-weight:600; font-size:16px; margin-bottom:4px; }
+  .loc-card .addr{ font-size:13px; color:var(--ink-soft); }
+
+  /* ---------- order rules / features ---------- */
+  .info-grid{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:22px;
+  }
+  @media (max-width:820px){ .info-grid{ grid-template-columns:1fr; } }
+  .info-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:22px 22px 24px;
+  }
+  .info-card h3{
+    font-size:13px;
+    color:var(--cream);
+    background:var(--maroon);
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:2px;
+    margin:0 0 14px;
+    font-weight:500;
+    letter-spacing:.02em;
+  }
+  .info-card ul{ margin:0; padding-left:18px; }
+  .info-card li{ font-size:13px; color:var(--ink-soft); margin-bottom:9px; line-height:1.5; }
+
+  /* ---------- contact footer ---------- */
+  footer{
+    background:var(--maroon-deep);
+    color:var(--cream);
+    padding:52px 20px 40px;
+  }
+  .footer-inner{
+    max-width:1080px; margin:0 auto;
+    display:grid; grid-template-columns:1.4fr 1fr;
+    gap:40px;
+  }
+  @media (max-width:760px){ .footer-inner{ grid-template-columns:1fr; } }
+  .footer-inner h2{
+    font-size:30px; margin:0 0 8px; color:var(--gold-light);
+  }
+  .footer-inner p.lead{ font-size:13.5px; color:#e9d9c7; margin-bottom:22px; max-width:420px; }
+  .contact-row{
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:14px; font-size:14.5px;
+  }
+  .contact-row .ic{ width:22px; text-align:center; color:var(--gold-light); }
+  .wa-btn{
+    margin-top:10px;
+    display:inline-flex; align-items:center; gap:10px;
+    background:#3F6B3F; color:#fff;
+    padding:14px 26px; border-radius:6px;
+    font-weight:600; font-size:14.5px;
+    text-decoration:none;
+  }
+  .wa-btn:hover{ background:#345a34; }
+
+  .qr-wrap{
+    max-width:250px;
+    justify-self:end;
+    text-align:center;
+  }
+  @media (max-width:760px){ .qr-wrap{ justify-self:start; } }
+  .qr-box{
+    background:var(--paper);
+    border-radius:8px;
+    padding:16px;
+  }
+  .qr-box img{ width:100%; max-width:230px; height:auto; aspect-ratio:1/1; margin:0 auto; display:block; border:1px solid var(--line); border-radius:4px; }
+  .qr-caption{ margin-top:12px; color:var(--cream); }
+  .qr-caption .lbl{ font-size:12.5px; color:#cbb79f; }
+  .qr-caption .num{ font-size:14px; font-weight:600; color:var(--gold-light); margin-top:3px; word-break:break-all; }
+
+  .pay-strip{
+    max-width:1080px; margin:36px auto 0;
+    display:flex; align-items:center; justify-content:center; gap:24px;
+    flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.15);
+    padding-top:24px;
+    font-size:12.5px; color:#cbb79f;
+  }
+
+  .fine-print{
+    text-align:center; font-size:11.5px; color:#b89b7c;
+    margin-top:30px;
+  }
+
+  ::selection{ background:var(--gold-light); color:var(--maroon-deep); }
+</style>
+</head>
+<body class="grain-bg">
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-frame">
+    <img class="hero-banner" src="assets/hero-banner.png" alt="साजूक स्वाद by Pragati — Homemade Maharashtrian Delicacies">
+  </div>
+  <div class="ribbon mr">प्रत्येक ऑर्डर ऑर्डरनुसार, ताजी बनवली जाते</div>
+</header>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="products">
+  <div class="section-title">
+    <span class="tag mr">आमचे पदार्थ &nbsp;•&nbsp; Our Menu</span>
+    <p class="section-sub">कोणत्याही पदार्थावर क्लिक करा — त्यात काय वापरलंय आणि तो किती सुरक्षित/ऑरगॅनिक आहे ते बघा<br>Tap any dish to see its ingredients and how safe &amp; organic it is</p>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- Puran Poli -->
+    <div class="pcard puran" tabindex="0" onclick="openModal('puran')">
+      <div class="pcard-img">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20Puranpoli%20-%20Homemade%20-%20maharashtra.jpg" alt="पुरणपोळी" loading="lazy">
+        <span class="pcard-tap mr">बघा →</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-name-mr mr">पुरणपोळी</p>
+        <p class="pcard-name-en en-script">Puran Poli</p>
+        <p class="pcard-desc mr">चणाडाळ आणि गुळाचं गोड पुरण भरून, साजूक तुपात भाजलेली पारंपरिक पोळी.</p>
+        <div class="pcard-price-hint">
+          <span class="pcard-from mr">सुरुवात <b>₹39</b> / नग</span>
+          <span class="pcard-view mr">तपशील बघा</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ukadiche Modak -->
+    <div class="pcard modak" tabindex="0" onclick="openModal('modak')">
+      <div class="pcard-img">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puneri%20Ukadiche%20Modak.jpg" alt="उकडीचे मोदक" loading="lazy">
+        <span class="pcard-tap mr">बघा →</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-name-mr mr">उकडीचे मोदक</p>
+        <p class="pcard-name-en en-script">Ukadiche Modak</p>
+        <p class="pcard-desc mr">तांदळाच्या उकडीच्या आवरणात ओलं खोबरं-गुळाचं सारण भरलेले वाफवलेले मोदक.</p>
+        <div class="pcard-price-hint">
+          <span class="pcard-from mr">सुरुवात <b>₹29</b> / नग</span>
+          <span class="pcard-view mr">तपशील बघा</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Besan Ladoo -->
+    <div class="pcard ladoo" tabindex="0" onclick="openModal('ladoo')">
+      <div class="pcard-img">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Besan%20laddu%20photo.JPG" alt="बेसन लाडू" loading="lazy">
+        <span class="pcard-tap mr">बघा →</span>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-name-mr mr">बेसन लाडू</p>
+        <p class="pcard-name-en en-script">Besan Ladoo</p>
+        <p class="pcard-desc mr">साजूक तुपात खमंग भाजलेल्या बेसनाचे, पिठीसाखर घालून वळलेले लाडू.</p>
+        <div class="pcard-price-hint">
+          <span class="pcard-from mr">सुरुवात <b>₹19</b> / नग</span>
+          <span class="pcard-view mr">तपशील बघा</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ OFFERS ============ -->
+<section class="section offers">
+  <div class="section-title">
+    <span class="tag mr">खास ऑफर्स</span>
+  </div>
+  <div class="offers-grid">
+    <div class="offer-item">
+      <div class="offer-icon">🎁</div>
+      <p class="big mr">पहिल्या ग्राहकांसाठी</p>
+      <p class="mr">पहिल्या 50 ग्राहकांसाठी खास सवलत!</p>
+    </div>
+    <div class="offer-item">
+      <div class="offer-icon">🛵</div>
+      <p class="big mr">₹999+ वर मोफत डिलिव्हरी</p>
+      <p class="mr">निवडक जवळच्या भागांसाठी लागू</p>
+    </div>
+    <div class="offer-item">
+      <div class="offer-icon">👥</div>
+      <p class="big mr">रेफरल ऑफर — ₹50 सूट</p>
+      <p class="mr">मित्र-मैत्रिणींना सुचवा आणि सूट मिळवा</p>
+    </div>
+    <div class="offer-item">
+      <div class="offer-icon">📅</div>
+      <p class="big mr">कार्यक्रमांसाठी ऑर्डर</p>
+      <p class="mr">वाढदिवस, मुंज, गृहप्रवेश, सण — सर्व साठी ऑर्डर स्वीकारल्या जातात</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="section" id="locations">
+  <div class="section-title">
+    <span class="tag mr">आमच्या लोकेशन्स</span>
+  </div>
+  <div class="loc-grid">
+    <div class="loc-card">
+      <p class="name mr">📍 SANTACRUZ WEST</p>
+      <p class="addr mr">सांताक्रुझ पश्चिम, मुंबई</p>
+    </div>
+    <div class="loc-card">
+      <p class="name mr">📍 TARDEO</p>
+      <p class="addr mr">ताडदेव, मुंबई</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RULES / FEATURES / CONTACT INFO ============ -->
+<section class="section" id="info">
+  <div class="info-grid">
+    <div class="info-card">
+      <h3 class="mr">ऑर्डर नियम</h3>
+      <ul class="mr">
+        <li>ऑर्डर किमान 24 तास आधी द्यावी.</li>
+        <li>₹500 पेक्षा जास्त ऑर्डरवर 50% ॲडव्हान्स आवश्यक.</li>
+        <li>मोठ्या ऑर्डरसाठी 2-3 दिवस आधी बुकिंग करावे.</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3 class="mr">आमची वैशिष्ट्ये</h3>
+      <ul class="mr">
+        <li>100% घरगुती चव</li>
+        <li>शुद्ध व दर्जेदार साहित्य</li>
+        <li>ऑर्डरनुसार ताजे बनवलेले</li>
+        <li>स्वच्छता आणि गुणवत्तेची हमी</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3 class="mr">ऑर्डरसाठी संपर्क</h3>
+      <ul class="mr">
+        <li>📞 8169572737 (Order / WhatsApp)</li>
+        <li>💳 8169572737 (UPI / GPay)</li>
+        <li>📍 Santacruz West &amp; Tardeo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <h2 class="mr">ऑर्डर करण्यासाठी संपर्क करा</h2>
+      <p class="lead mr">फोटो, प्रमाण आणि तारीख सांगून थेट व्हॉट्सॲपवर मेसेज करा — आम्ही लगेच उत्तर देऊ.</p>
+
+      <div class="contact-row"><span class="ic">📞</span> 8169572737 — Order / WhatsApp</div>
+      <div class="contact-row"><span class="ic">💳</span> 8169572737 — UPI / GPay</div>
+      <div class="contact-row"><span class="ic">📍</span> Santacruz West &amp; Tardeo, Mumbai</div>
+
+      <a class="wa-btn" href="https://wa.me/918169572737?text=नमस्कार%2C%20मला%20ऑर्डर%20करायची%20आहे" target="_blank" rel="noopener">
+        💬 WhatsApp वर ऑर्डर करा
+      </a>
+    </div>
+
+    <div class="qr-wrap">
+      <div class="qr-box">
+        <img src="assets/qr-code.jpg" alt="UPI QR code — Pragati More">
+      </div>
+      <div class="qr-caption">
+        <div class="lbl">Scan to Pay</div>
+        <div class="num">pragatimore2627-1@oksbi</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pay-strip">
+    <span>Google Pay</span><span>•</span><span>PhonePe</span><span>•</span><span>Paytm</span><span>•</span><span>Cash</span>
+  </div>
+  <p class="fine-print mr">© साजूक स्वाद by Pragati — सर्व हक्क राखीव</p>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="overlay" id="overlay" onclick="closeOnOverlay(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-img" id="modal-img"><img id="modal-img-tag" src="" alt=""></div>
+    <div class="modal-body" id="modal-body"><!-- injected --></div>
+  </div>
+</div>
+
+<script>
+const PRODUCTS = {
+  puran: {
+    nameMr: "पुरणपोळी",
+    nameEn: "Puran Poli",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20Puranpoli%20-%20Homemade%20-%20maharashtra.jpg",
+    pills: ["100% घरगुती", "प्रिझर्वेटिव्ह-मुक्त", "ऑर्डरनुसार ताजी बनवलेली", "साजूक तुपात भाजलेली"],
+    ingredients: ["चणाडाळ (Chana Dal)", "गूळ (Jaggery)", "गव्हाचे पीठ", "मैदा", "साजूक तूप", "वेलची पूड", "जायफळ"],
+    safety: "पुरण घरीच चणाडाळ आणि गूळ शिजवून बनवले जाते — बाहेरचे रेडिमेड मिश्रण वापरले जात नाही. साखरेऐवजी गूळ वापरल्याने ती नैसर्गिक आणि तुलनेने आरोग्यदायी असते. कोणतेही कृत्रिम रंग किंवा प्रिझर्वेटिव्ह वापरले जात नाहीत.",
+    prices: [["1 नग (1 Piece)","₹39"],["5 नग (5 Pieces)","₹189"],["10 नग (10 Pieces)","₹369"],["20 नग (20 Pieces)","₹729"]]
+  },
+  modak: {
+    nameMr: "उकडीचे मोदक",
+    nameEn: "Ukadiche Modak",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Puneri%20Ukadiche%20Modak.jpg",
+    pills: ["100% घरगुती", "ओलं खोबरं वापरलेलं", "वाफवलेले — तळलेले नाही", "प्रिझर्वेटिव्ह-मुक्त"],
+    ingredients: ["तांदळाची पिठी (Rice Flour)", "ओलं खोबरं (Fresh Coconut)", "गूळ (Jaggery)", "वेलची पूड", "तूप", "खसखस (पर्यायी)"],
+    safety: "आवरणासाठी फक्त तांदळाची पिठी व पाणी वापरले जाते — कोणतेही कृत्रिम मऊपणा आणणारे घटक नाहीत. सारणासाठी ताजं खोबरं त्याच दिवशी किसून वापरले जाते. मोदक उकडून/वाफवून बनवले जातात, त्यामुळे तेल किंवा तूप कमी वापरले जाते.",
+    prices: [["1 नग (1 Piece)","₹29"],["4 नग (4 Pieces)","₹109"],["6 नग (6 Pieces)","₹159"],["11 नग (11 Pieces)","₹279"],["21 नग (21 Pieces)","₹529"]]
+  },
+  ladoo: {
+    nameMr: "बेसन लाडू",
+    nameEn: "Besan Ladoo",
+    img: "https://commons.wikimedia.org/wiki/Special:FilePath/Besan%20laddu%20photo.JPG",
+    pills: ["100% घरगुती", "साजूक तुपात भाजलेले", "प्रिझर्वेटिव्ह-मुक्त", "15+ दिवस टिकाऊ"],
+    ingredients: ["बेसन (Gram Flour)", "साजूक तूप (Pure Ghee)", "पिठीसाखर (Powdered Sugar)", "वेलची पूड", "काजू-बदाम (पर्यायी)"],
+    safety: "बेसन मंद आचेवर, भरपूर साजूक तुपात खमंग होईपर्यंत भाजले जाते — यामुळे लाडू पचायला हलके होतात. कोणतीही भेसळ किंवा वनस्पती तूप (डालडा) वापरले जात नाही, फक्त शुद्ध साजूक तूप वापरले जाते.",
+    prices: [["1 नग (1 Piece)","₹19"],["6 नग (6 Pieces)","₹109"],["12 नग (12 Pieces)","₹209"],["24 नग (24 Pieces)","₹399"]]
+  }
+};
+
+function openModal(key){
+  const p = PRODUCTS[key];
+  const modalImgTag = document.getElementById('modal-img-tag');
+  modalImgTag.src = p.img;
+  modalImgTag.alt = p.nameMr;
+
+  const pillsHtml = p.pills.map(x => `<span class="purity-pill mr">${x}</span>`).join('');
+  const ingHtml = p.ingredients.map(x => `<li class="mr">${x}</li>`).join('');
+  const priceHtml = p.prices.map(row => `<tr><td class="mr">${row[0]}</td><td>${row[1]}</td></tr>`).join('');
+
+  const waText = encodeURIComponent(`नमस्कार, मला ${p.nameMr} ऑर्डर करायची आहे.`);
+
+  document.getElementById('modal-body').innerHTML = `
+    <p class="modal-head-mr mr">${p.nameMr}</p>
+    <p class="modal-head-en en-script">${p.nameEn}</p>
+
+    <div class="purity-strip">${pillsHtml}</div>
+
+    <p class="modal-label mr">यात काय वापरलंय</p>
+    <ul class="ingredient-list">${ingHtml}</ul>
+
+    <p class="modal-label mr">किती सुरक्षित / ऑरगॅनिक</p>
+    <p class="safety-note mr">${p.safety}</p>
+
+    <p class="modal-label mr">किंमत यादी</p>
+    <table class="price-table">${priceHtml}</table>
+
+    <div class="modal-actions">
+      <a class="btn btn-whatsapp" href="https://wa.me/918169572737?text=${waText}" target="_blank" rel="noopener">💬 WhatsApp वर ऑर्डर करा</a>
+      <button class="btn btn-outline mr" onclick="closeModal()">बंद करा</button>
+    </div>
+  `;
+
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeOnOverlay(e){
+  if(e.target.id === 'overlay') closeModal();
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
