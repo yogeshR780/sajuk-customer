@@ -38,13 +38,13 @@
   a{color:inherit;}
   img{max-width:100%; display:block;}
 
-  /* ---------- page background image wrapper (everything except footer) ---------- */
-  .bg-wrap{
+  /* ---------- content background image wrapper (products, offers, locations, info) ---------- */
+  .content-bg{
     position:relative;
-    background-image: url('ganpatibg.png');
+    background-image: url('ganpatibg.png ');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top center;
+    background-position: left top;
   }
 
   /* ---------- header / hero ---------- */
@@ -53,6 +53,7 @@
     padding:26px 16px 34px;
     text-align:center;
     border-bottom:1px solid var(--line);
+    background:var(--cream);
   }
   .hero-frame{
     position:relative;
@@ -418,21 +419,22 @@
 </head>
 <body>
 
-<div class="bg-wrap">
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="hero-frame">
-    <img class="hero-banner" src="hero-banner.png" alt="साजूक स्वाद by Pragati — Homemade Maharashtrian Delicacies">
-  </div>
-  <div class="ribbon mr">प्रत्येक ऑर्डर ऑर्डरनुसार, ताजी बनवली जाते</div>
-</header>
+  <!-- ============ HERO (separate, no background image) ============ -->
+  <header class="hero" id="top">
+    <div class="hero-frame">
+      <img class="hero-banner" src="hero-banner.png" alt="साजूक स्वाद by Pragati — Homemade Maharashtrian Delicacies">
+    </div>
+    <div class="ribbon mr">प्रत्येक ऑर्डर ऑर्डरनुसार, ताजी बनवली जाते</div>
+  </header>
+  
+  <!-- ============ CONTENT WITH BACKGROUND IMAGE (products, offers, locations, info) ============ -->
+  <div class="content-bg">
 
 <!-- ============ PRODUCTS ============ -->
 <section class="section" id="products">
   <div class="section-title">
     <span class="tag mr">आमचे पदार्थ &nbsp;•&nbsp; Our Menu</span>
-    <!-- <p class="section-sub">कोणत्याही पदार्थावर क्लिक करा — त्यात काय वापरलंय आणि तो किती सुरक्षित/ऑरगॅनिक आहे ते बघा<br>Tap any dish to see its ingredients and how safe &amp; organic it is</p> -->
+    <p class="section-sub">कोणत्याही पदार्थावर क्लिक करा — त्यात काय वापरलंय आणि तो किती सुरक्षित/ऑरगॅनिक आहे ते बघा<br>Tap any dish to see its ingredients and how safe &amp; organic it is</p>
   </div>
 
   <div class="products-grid">
@@ -564,9 +566,9 @@
 </section>
 
 </div>
-<!-- ============ /bg-wrap ============ -->
+<!-- ============ /content-bg ============ -->
 
-<!-- ============ FOOTER / CONTACT ============ -->
+<!-- ============ FOOTER / CONTACT (separate, no background image) ============ -->
 <footer id="contact">
   <div class="footer-inner">
     <div>
